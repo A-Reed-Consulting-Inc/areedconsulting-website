@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio | A Reed Consulting Inc</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .portfolio-section { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+    .project-group { margin-bottom: 60px; }
+    .project-group h2 { 
+      color: var(--accent); 
+      border-bottom: 2px solid var(--accent); 
+      padding-bottom: 10px; 
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+    .image-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+      gap: 20px; 
+    }
+    .portfolio-item { 
+      background: var(--surface); 
+      border-radius: var(--radius); 
+      overflow: hidden; 
+      border: 1px solid rgba(255,255,255,.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .portfolio-item:hover { 
+      transform: translateY(-4px); 
+      box-shadow: var(--shadow); 
+    }
+    .portfolio-item img { 
+      width: 100%; 
+      height: 220px; 
+      object-fit: cover; 
+      display: block;
+      cursor: pointer;
+    }
+    .portfolio-item p { 
+      padding: 12px 16px; 
+      margin: 0; 
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 300;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.95);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 95%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: var(--text);
+      cursor: pointer;
+    }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 50px;
+      color: var(--text);
+      cursor: pointer;
+      padding: 20px;
+      user-select: none;
+    }
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><span>A Reed Consulting Inc</span></a>
+  <nav id="nav" class="nav" aria-label="Primary">
+    <button class="nav-toggle" onclick="toggleNav()"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <ul id="nav-links" class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="services.html">Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#" data-service="consultation" data-price="100">Phone Consultation - $100/hr</a></li>
+          <li><a href="#" data-service="field-verify" data-price="125">As-built Field Verify - $125/hr</a></li>
+          <li><a href="#" data-service="cad-docs" data-price="125">As-built CAD Documentation - $125/hr</a></li>
+          <li><a href="#" data-service="construction" data-price="150">Construction Documents - $150/hr</a></li>
+          <li><a href="#" data-service="permitting" data-price="100">Permitting - $100/hr</a></li>
+        </ul>
+      </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Get a Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div id="stripe-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Book Service</h2>
+    <p id="service-name"></p>
+    <p id="service-price"></p>
+    <button id="checkout-button" class="btn primary">Pay with Stripe</button>
+  </div>
+</div>
+
+<main>
+<section class="page-hero">
+  <h1>Portfolio</h1>
+  <p>Sample drawings and permit sets from residential remodels, additions, and ADUs across Southern California.</p>
+</section>
+
+<section class="portfolio-section">
+  
+  <!-- LILAC Project -->
+  <div class="project-group">
+    <h2>LILAC Project</h2>
+    <div class="image-grid">
+      <div class="portfolio-item">
+        <img src="LILAC-TS.png" alt="LILAC Title Sheet" onclick="openLightbox(0)">
+        <p>Title Sheet</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-SITE.png" alt="LILAC Site Plan" onclick="openLightbox(1)">
+        <p>Site Plan</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-SITE CONST.png" alt="LILAC Site Construction" onclick="openLightbox(2)">
+        <p>Site Construction Details</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-DEMO.png" alt="LILAC Demolition Plan" onclick="openLightbox(3)">
+        <p>Demolition Plan</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-construction.png" alt="LILAC Construction Plan" onclick="openLightbox(4)">
+        <p>Construction Plan</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-ELEVS.png" alt="LILAC Elevations" onclick="openLightbox(5)">
+        <p>Elevations</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-RCP.png" alt="LILAC Reflected Ceiling Plan" onclick="openLightbox(6)">
+        <p>Reflected Ceiling Plan</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-PCP.png" alt="LILAC Power & Communications Plan" onclick="openLightbox(7)">
+        <p>Power & Communications Plan</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-MOE.png" alt="LILAC Matrix of Equipment" onclick="openLightbox(8)">
+        <p>Matrix of Equipment</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-DETAILS.png" alt="LILAC Construction Details" onclick="openLightbox(9)">
+        <p>Construction Details</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-LANDSCAPE.png" alt="LILAC Landscape Plan" onclick="openLightbox(10)">
+        <p>Landscape Plan</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-TRASH ENCL.png" alt="LILAC Trash Enclosure" onclick="openLightbox(11)">
+        <p>Trash Enclosure Details</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="LILAC-ADA.png" alt="LILAC ADA Compliance" onclick="openLightbox(12)">
+        <p>ADA Compliance Details</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- San Clemente Project -->
+  <div class="project-group">
+    <h2>San Clemente Project</h2>
+    <div class="image-grid">
+      <div class="portfolio-item">
+        <img src="SAN CLEMENTE-title sheet.png" alt="San Clemente Title Sheet" onclick="openLightbox(13)">
+        <p>Title Sheet</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="SAN CLEMENTE-demo.png" alt="San Clemente Demolition Plan" onclick="openLightbox(14)">
+        <p>Demolition Plan</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="SAN CLEMENTE-construction.png" alt="San Clemente Construction Plan" onclick="openLightbox(15)">
+        <p>Construction Plan</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="SAN CLEMENTE-RCP.png" alt="San Clemente Reflected Ceiling Plan" onclick="openLightbox(16)">
+        <p>Reflected Ceiling Plan</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="SAN CLEMENTE-power & comm.png" alt="San Clemente Power & Communications" onclick="openLightbox(17)">
+        <p>Power & Communications Plan</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="SAN CLEMENTE-moe.png" alt="San Clemente Matrix of Equipment" onclick="openLightbox(18)">
+        <p>Matrix of Equipment</p>
+      </div>
+      <div class="portfolio-item">
+        <img src="SAN CLEMENTE-details.png" alt="San Clemente Construction Details" onclick="openLightbox(19)">
+        <p>Construction Details</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mass Condo Project -->
+  <div class="project-group">
+    <h2>Mass Condo Project</h2>
+    <div class="image-grid">
+      <div class="portfolio-item">
+        <img src="MASS CONDO-DP-CP 101625.png" alt="Mass Condo Demo & Construction Plan" onclick="openLightbox(20)">
+        <p>Demolition & Construction Plan</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+  <span class="lightbox-nav lightbox-prev" onclick="prevImage(event)">&#10094;</span>
+  <img id="lightbox-img" src="" alt="">
+  <span class="lightbox-nav lightbox-next" onclick="nextImage(event)">&#10095;</span>
+</div>
+
+<footer class="site-footer">
+  <p class="legal">© 2025 A Reed Consulting Inc. All rights reserved.</p>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="script.js"></script>
+<script>
+  const images = [
+    'LILAC-TS.png', 'LILAC-SITE.png', 'LILAC-SITE CONST.png', 'LILAC-DEMO.png',
+    'LILAC-construction.png', 'LILAC-ELEVS.png', 'LILAC-RCP.png', 'LILAC-PCP.png',
+    'LILAC-MOE.png', 'LILAC-DETAILS.png', 'LILAC-LANDSCAPE.png', 'LILAC-TRASH ENCL.png',
+    'LILAC-ADA.png', 'SAN CLEMENTE-title sheet.png', 'SAN CLEMENTE-demo.png',
+    'SAN CLEMENTE-construction.png', 'SAN CLEMENTE-RCP.png', 'SAN CLEMENTE-power & comm.png',
+    'SAN CLEMENTE-moe.png', 'SAN CLEMENTE-details.png', 'MASS CONDO-DP-CP 101625.png'
+  ];
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    document.getElementById('lightbox-img').src = images[index];
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(event) {
+    if (event.target.classList.contains('lightbox') || event.target.classList.contains('lightbox-close')) {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function nextImage(event) {
+    event.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+  }
+
+  function prevImage(event) {
+    event.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    } else if (e.key === 'ArrowRight') {
+      nextImage({ stopPropagation: () => {} });
+    } else if (e.key === 'ArrowLeft') {
+      prevImage({ stopPropagation: () => {} });
+    }
+  });
+</script>
+</body>
+</html>

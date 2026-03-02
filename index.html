@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drafting, Permitting & Expediting | A Reed Consulting Inc</title>
+  <meta name="description" content="Residential & light commercial drafting, permit sets, Title 24 coordination, and permit expediting across Southern California—fast, precise, code-compliant.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="canonical" href="https://www.areedconsulting.com/">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Drafting, Permitting & Expediting | A Reed Consulting Inc">
+  <meta property="og:description" content="Residential & light commercial drafting, permit sets, Title 24 coordination, and permit expediting across Southern California.">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "A Reed Consulting Inc",
+  "url": "https://www.areedconsulting.com/",
+  "email": "anthony@areedconsulting.com",
+  "telephone": "(555) 123-4567",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6924 Skyline Dr",
+    "addressLocality": "San Diego",
+    "addressRegion": "CA",
+    "postalCode": "92114",
+    "addressCountry": "US"
+  }
+}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <span>A Reed Consulting Inc</span>
+  </a>
+  <nav id="nav" class="nav" aria-label="Primary">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu" onclick="toggleNav()">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <ul id="nav-links" class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="services.html">Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#" data-service="consultation" data-price="100">Phone Consultation - $100/hr</a></li>
+          <li><a href="#" data-service="field-verify" data-price="125">As-built Field Verify - $125/hr</a></li>
+          <li><a href="#" data-service="cad-docs" data-price="125">As-built CAD Documentation - $125/hr</a></li>
+          <li><a href="#" data-service="construction" data-price="150">Construction Documents - $150/hr</a></li>
+          <li><a href="#" data-service="permitting" data-price="100">Permitting - $100/hr</a></li>
+        </ul>
+      </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Get a Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Stripe Checkout Modal -->
+<div id="stripe-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Book Service</h2>
+    <p id="service-name"></p>
+    <p id="service-price"></p>
+    <button id="checkout-button" class="btn primary">Pay with Stripe</button>
+  </div>
+</div>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Permit-Ready Plans. <span class="accent">On Time.</span></h1>
+    <p>We produce clean, code-compliant drawings and manage the permitting maze so you don't have to.</p>
+    <div class="actions">
+      <a class="btn primary" href="contact.html">Get a Same-Day Quote</a>
+      <a class="btn ghost" href="portfolio.html">See Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <h2>What we do</h2>
+  <div class="card-grid">
+    <article class="card">
+      <h3>Architectural Drafting</h3>
+      <p>As-builts, floor plans, elevations, sections, and details in CAD, ready for plan check.</p>
+    </article>
+    <article class="card">
+      <h3>Permit Sets</h3>
+      <p>Full permit sheets: site, demo, architectural, structural coordination, Title 24 & CALGreen notes.</p>
+    </article>
+    <article class="card">
+      <h3>Expediting</h3>
+      <p>We handle city portals, corrections, routing, and resubmittals until your permit is issued.</p>
+    </article>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to start?</h2>
+  <p>Send an address and a few photos—we'll quote within hours.</p>
+  <a class="btn primary" href="contact.html">Request a Quote</a>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <strong>A Reed Consulting Inc</strong><br>
+      <a href="tel:(619) 743-7923">(619) 743-7923</a><br>
+      <a href="mailto:anthony@areedconsulting.com">anthony@areedconsulting.com</a><br>
+      <address>6924 Skyline Dr, San Diego, CA 92114</address>
+    </div>
+  </div>
+  <p class="legal">© 2025 A Reed Consulting Inc. All rights reserved.</p>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="script.js"></script>
+</body>
+</html>

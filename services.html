@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services & Pricing | A Reed Consulting Inc</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><span>A Reed Consulting Inc</span></a>
+  <nav id="nav" class="nav" aria-label="Primary">
+    <button class="nav-toggle" onclick="toggleNav()"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <ul id="nav-links" class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="services.html">Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#" data-service="consultation" data-price="100">Phone Consultation - $100/hr</a></li>
+          <li><a href="#" data-service="field-verify" data-price="125">As-built Field Verify - $125/hr</a></li>
+          <li><a href="#" data-service="cad-docs" data-price="125">As-built CAD Documentation - $125/hr</a></li>
+          <li><a href="#" data-service="construction" data-price="150">Construction Documents - $150/hr</a></li>
+          <li><a href="#" data-service="permitting" data-price="100">Permitting - $100/hr</a></li>
+        </ul>
+      </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Get a Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div id="stripe-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Book Service</h2>
+    <p id="service-name"></p>
+    <p id="service-price"></p>
+    <button id="checkout-button" class="btn primary">Pay with Stripe</button>
+  </div>
+</div>
+
+<main>
+<section class="page-hero">
+  <h1>Services & Pricing</h1>
+  <p>Clear scopes. Upfront pricing. Local-code expertise.</p>
+</section>
+
+<section class="service-section">
+  <h2>Instant Book Services</h2>
+  <div class="service-list">
+    <div class="service-item" data-service="consultation" data-price="100">
+      <h3>Phone Consultation</h3>
+      <p class="price">$100/hour</p>
+      <button class="btn book-now">Book Now</button>
+    </div>
+    <div class="service-item" data-service="field-verify" data-price="125">
+      <h3>As-built Field Verify</h3>
+      <p class="price">$125/hour</p>
+      <button class="btn book-now">Book Now</button>
+    </div>
+    <div class="service-item" data-service="cad-docs" data-price="125">
+      <h3>As-built CAD Documentation</h3>
+      <p class="price">$125/hour</p>
+      <button class="btn book-now">Book Now</button>
+    </div>
+    <div class="service-item" data-service="construction" data-price="150">
+      <h3>Construction Documents</h3>
+      <p class="price">$150/hour</p>
+      <button class="btn book-now">Book Now</button>
+    </div>
+    <div class="service-item" data-service="permitting" data-price="100">
+      <h3>Permitting</h3>
+      <p class="price">$100/hour</p>
+      <button class="btn book-now">Book Now</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <strong>A Reed Consulting Inc</strong><br>
+      <a href="tel:(619) 743-7923">(619) 743-7923</a><br>
+      <a href="mailto:anthony@areedconsulting.com">anthony@areedconsulting.com</a>
+    </div>
+  </div>
+  <p class="legal">© 2025 A Reed Consulting Inc. All rights reserved.</p>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="script.js"></script>
+</body>
+</html>

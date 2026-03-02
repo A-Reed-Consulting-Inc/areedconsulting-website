@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | A Reed Consulting Inc</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><span>A Reed Consulting Inc</span></a>
+  <nav id="nav" class="nav" aria-label="Primary">
+    <button class="nav-toggle" onclick="toggleNav()"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    <ul id="nav-links" class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="services.html">Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#" data-service="consultation" data-price="100">Phone Consultation - $100/hr</a></li>
+          <li><a href="#" data-service="field-verify" data-price="125">As-built Field Verify - $125/hr</a></li>
+          <li><a href="#" data-service="cad-docs" data-price="125">As-built CAD Documentation - $125/hr</a></li>
+          <li><a href="#" data-service="construction" data-price="150">Construction Documents - $150/hr</a></li>
+          <li><a href="#" data-service="permitting" data-price="100">Permitting - $100/hr</a></li>
+        </ul>
+      </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Get a Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div id="stripe-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Book Service</h2>
+    <p id="service-name"></p>
+    <p id="service-price"></p>
+    <button id="checkout-button" class="btn primary">Pay with Stripe</button>
+  </div>
+</div>
+
+<main>
+<section class="page-hero">
+  <h1>Contact Us</h1>
+  <p>Send your project address and a few photos for the fastest quote.</p>
+</section>
+
+<section class="contact-grid">
+  <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <label>Full Name<input type="text" name="name" required></label>
+    <label>Email<input type="email" name="email" required></label>
+    <label>Phone<input type="tel" name="phone"></label>
+    <label>Project Address<textarea name="address" rows="2" required></textarea></label>
+    <label>Notes<textarea name="notes" rows="4"></textarea></label>
+    <button class="btn primary" type="submit">Send Message</button>
+  </form>
+  <aside class="contact-aside">
+    <h2>Call us</h2>
+    <p><a href="tel:(619) 743-7923">(619) 743-7923</a></p>
+    <h2>Email</h2>
+    <p><a href="mailto:anthony@areedconsulting.com">anthony@areedconsulting.com</a></p>
+    <h2>Address</h2>
+    <p>6924 Skyline Dr<br>San Diego, CA 92114</p>
+  </aside>
+</section>
+</main>
+
+<footer class="site-footer">
+  <p class="legal">© 2025 A Reed Consulting Inc. All rights reserved.</p>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="script.js"></script>
+</body>
+</html>
