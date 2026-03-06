@@ -1,0 +1,4 @@
+Price ID,Product ID,Product Name,Product Statement Descriptor,Product Tax Code,Description,Created (UTC),Amount,Currency,Interval,Interval Count,Usage Type,Aggregate Usage,Billing Scheme,Trial Period Days,Tax Behavior
+price_1T7seAE03aVdhmxukOIoQhLy,prod_U64n6uUBIlthjj,Construction Documents,,txcd_20030000,,2026-03-06 07:18,150.00,usd,,,,,per_unit,,inclusive
+price_1T7sd8E03aVdhmxuJM0CgRD5,prod_U64mqzajnhUUQW,As-Built - CAD Documentation,,txcd_20030000,,2026-03-06 07:17,125.00,usd,,,,,per_unit,,inclusive
+price_1T7sPsE03aVdhmxuJUYPM09l,prod_U64Z5rk4mAbThH,As-Built - Field Verify,,txcd_20030000,,2026-03-06 07:03,125.00,usd,,,,,per_unit,,inclusive
