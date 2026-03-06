@@ -73,10 +73,10 @@ checkoutBtn.addEventListener('click', async () => {
   // Then map them here:
   const priceIds = {
     'consultation': 'price_1234567890',      // Replace with actual Stripe Price ID
-    'field-verify': 'price_1234567891',      // Replace with actual Stripe Price ID
-    'cad-docs': 'price_1234567892',          // Replace with actual Stripe Price ID
-    'construction': 'price_1234567893',      // Replace with actual Stripe Price ID
-    'permitting': 'price_1234567894'         // Replace with actual Stripe Price ID
+    'field-verify': 'price_1T7sPsE03aVdhmxuJUYPM09l',      // Replace with actual Stripe Price ID
+    'cad-docs': 'price_1T7sd8E03aVdhmxuJM0CgRD5',          // Replace with actual Stripe Price ID
+    'construction': 'price_1T7seAE03aVdhmxukOIoQhLy',      // Replace with actual Stripe Price ID
+    'permitting': 'price_1T7sLvE03aVdhmxur2s9ivoR'         // Replace with actual Stripe Price ID
   };
 
   // For now, alert user to complete setup
